@@ -1,0 +1,78 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 21px;
+  text-transform: capitalize;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+  width: 95%;
+  margin: 20px auto;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 60px auto 60px;
+  grid-template-areas:
+    "header header header header header header header header header header"
+    "cont cont cont cont cont cont cont cont cont cont"
+    "footer footer footer footer footer footer footer footer footer footer ";
+  gap: 25px 0;
+}
+
+.parent header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "logo logo nav nav nav nav nav nav nav nav";
+  padding: 15px;
+}
+
+.parent header h2 {
+  grid-area: logo;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #ddd;
+  padding: 15px;
+}
+
+.parent header nav {
+  grid-area: nav;
+}
+
+.parent header nav ul {
+  list-style: none;
+  background-color: #ddd;
+  display: flex;
+  justify-content: right;
+}
+
+.parent header nav ul li {
+  display: inline-block;
+  padding: 15px;
+}
+
+.parent .content {
+  grid-area: cont;
+  display: grid;
+  grid-template-areas: "content content content content content content content aside aside aside";
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  margin: 0 15px;
+}
+
+.parent .content section {
+  grid-area: content;
+}
+.parent .content aside {
+  grid-area: aside;
+}
+
+.parent footer {
+  grid-area: footer;
+  margin: 0 15px;
+  background-color: #ddd;
+  padding: 15px;
+}
